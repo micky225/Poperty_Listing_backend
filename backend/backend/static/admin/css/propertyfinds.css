@@ -1,0 +1,109 @@
+/* Property Finds admin theme */
+:root {
+  --pf-primary: #5424cb;
+  --pf-primary-dark: #3d1899;
+  --pf-accent: #6e5fe0;
+  --pf-surface: #f7f5ff;
+}
+
+#header {
+  background: linear-gradient(120deg, var(--pf-primary), var(--pf-accent));
+  color: #fff;
+}
+
+#header a:link,
+#header a:visited,
+#branding h1,
+#branding h1 a:link,
+#branding h1 a:visited {
+  color: #fff;
+}
+
+#user-tools a {
+  border-bottom-color: rgba(255, 255, 255, 0.45);
+}
+
+div.breadcrumbs {
+  background: var(--pf-surface);
+  color: #4b5563;
+}
+
+div.breadcrumbs a {
+  color: var(--pf-primary);
+}
+
+.module h2,
+.module caption,
+.inline-group h2 {
+  background: var(--pf-primary);
+  color: #fff;
+}
+
+a:link,
+a:visited {
+  color: var(--pf-primary);
+}
+
+.button,
+input[type='submit'],
+input[type='button'],
+.submit-row input,
+a.button {
+  background: var(--pf-primary);
+  color: #fff;
+  border-radius: 8px;
+  border: none;
+}
+
+.button:hover,
+input[type='submit']:hover,
+input[type='button']:hover,
+.submit-row input:hover,
+a.button:hover {
+  background: var(--pf-primary-dark);
+}
+
+.button.default,
+input[type='submit'].default,
+.submit-row input.default {
+  background: var(--pf-primary-dark);
+}
+
+#changelist-filter h2 {
+  background: var(--pf-primary);
+}
+
+#changelist .actions {
+  background: var(--pf-surface);
+}
+
+.object-tools a:link,
+.object-tools a:visited {
+  background: var(--pf-accent);
+  border-radius: 8px;
+}
+
+.object-tools a:hover {
+  background: var(--pf-primary);
+}
+
+#content-main .module {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
+
+.form-row {
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.help,
+.helptext {
+  color: #6b7280 !important;
+  font-size: 12px !important;
+}
+
+#site-name a {
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
