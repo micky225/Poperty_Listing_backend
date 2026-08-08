@@ -93,7 +93,7 @@ _cors_origins = [
     o.strip()
     for o in os.environ.get(
         'CORS_ALLOWED_ORIGINS',
-        'http://localhost:3000,http://127.0.0.1:3000',
+        'http://localhost:3000,http://127.0.0.1:3000,https://property-listing-zeta-lime.vercel.app',
     ).split(',')
     if o.strip()
 ]
