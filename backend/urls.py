@@ -8,5 +8,5 @@ urlpatterns = [
     path('api/', include('backend.app.urls')),
 ]
 
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# Always expose uploaded media (needed on Render when using local MEDIA_ROOT).
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

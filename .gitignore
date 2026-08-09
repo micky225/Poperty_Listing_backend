@@ -17,7 +17,7 @@ frontend/.next/
 # Backend
 backend/.venv/
 backend/media/
-backend/db.sqlite3
+
 backend/**/__pycache__/
 backend/**/*.pyc
 
@@ -25,9 +25,8 @@ backend/**/*.pyc
 node_modules/
 .next/
 .DS_Store
-media/
-db.sqlite3
+
 *.pyc
 __pycache__/
 .env/
-*.sqlite3
+

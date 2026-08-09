@@ -87,27 +87,39 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Frontend is hosted separately — allow its origin(s) via env in production.
-# Example: CORS_ALLOWED_ORIGINS=https://www.yourdomain.com,https://yourdomain.com
+# Frontend origins. Env CORS_ALLOWED_ORIGINS overrides this entire default list.
+# If you set CORS_ALLOWED_ORIGINS on Render, include every frontend URL you use.
+_cors_default = ','.join(
+    [
+        'http://localhost:3000',
+        'http://127.0.0.1:3000',
+        'https://property-listing-zeta-lime.vercel.app',
+    ]
+)
 _cors_origins = [
     o.strip()
-    for o in os.environ.get(
-        'CORS_ALLOWED_ORIGINS',
-        'http://localhost:3000,http://127.0.0.1:3000,https://property-listing-zeta-lime.vercel.app',
-    ).split(',')
+    for o in os.environ.get('CORS_ALLOWED_ORIGINS', _cors_default).split(',')
     if o.strip()
 ]
 CORS_ALLOWED_ORIGINS = _cors_origins
-CORS_ALLOW_ALL_ORIGINS = os.environ.get('CORS_ALLOW_ALL_ORIGINS', 'true').lower() in (
-    '1',
-    'true',
-    'yes',
-)
+# Default: open in debug, respect CORS_ALLOWED_ORIGINS in production
+CORS_ALLOW_ALL_ORIGINS = os.environ.get(
+    'CORS_ALLOW_ALL_ORIGINS',
+    'true' if DEBUG else 'false',
+).lower() in ('1', 'true', 'yes')
 CORS_ALLOW_CREDENTIALS = True
 
+_csrf_default = ','.join(
+    [
+        'https://property-listing-zeta-lime.vercel.app',
+        'https://poperty-listing-backend.onrender.com',
+        'http://localhost:3000',
+        'http://127.0.0.1:3000',
+    ]
+)
 CSRF_TRUSTED_ORIGINS = [
     o.strip()
-    for o in os.environ.get('CSRF_TRUSTED_ORIGINS', '').split(',')
+    for o in os.environ.get('CSRF_TRUSTED_ORIGINS', _csrf_default).split(',')
     if o.strip()
 ]
 
