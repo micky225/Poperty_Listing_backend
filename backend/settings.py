@@ -93,7 +93,7 @@ _cors_default = ','.join(
     [
         'http://localhost:3000',
         'http://127.0.0.1:3000',
-        'https://property-listing-zeta-lime.vercel.app',
+        'https://property-listing-frontend-iota.vercel.app',
     ]
 )
 _cors_origins = [
@@ -111,7 +111,7 @@ CORS_ALLOW_CREDENTIALS = True
 
 _csrf_default = ','.join(
     [
-        'https://property-listing-zeta-lime.vercel.app',
+        'https://property-listing-frontend-iota.vercel.app',
         'https://poperty-listing-backend.onrender.com',
         'http://localhost:3000',
         'http://127.0.0.1:3000',

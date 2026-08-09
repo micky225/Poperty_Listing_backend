@@ -34,7 +34,7 @@ backend/
 
 ## Production notes
 
-- Default `CORS_ALLOWED_ORIGINS` includes localhost + `https://property-listing-zeta-lime.vercel.app`
+- Default `CORS_ALLOWED_ORIGINS` includes localhost + `https://property-listing-frontend-iota.vercel.app`
 - If you set `CORS_ALLOWED_ORIGINS` on Render, **include the Vercel URL** — the env var replaces the default list
 - Start command: `bash start.sh` (migrate + seed-if-empty + gunicorn)
 - Prefer Postgres instead of SQLite for production
